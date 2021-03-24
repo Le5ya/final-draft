@@ -6,9 +6,7 @@ const scroll =() => {
   for(let i = 0; i < topItems.length; i++){
     topItems[i].addEventListener('click', (event) => { 
       event.preventDefault();
-
       let sectionID = a[i].getAttribute('href');
-
       document.querySelector(sectionID).scrollIntoView({
       behavior: 'smooth',
       block: 'start'
@@ -18,4 +16,4 @@ const scroll =() => {
   }
 
 };
-scroll();
+export default scroll;

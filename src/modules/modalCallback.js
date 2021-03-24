@@ -1,4 +1,4 @@
-const callback =() =>{
+const modalCallback = () =>{
   const
         callbackBtn = document.querySelectorAll('.callback-btn')[1],
         modalOverlay = document.querySelector('.modal-overlay'),
@@ -21,4 +21,4 @@ const callback =() =>{
  
 };
 
-callback();
+export default modalCallback;
