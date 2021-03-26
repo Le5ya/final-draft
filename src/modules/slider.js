@@ -4,10 +4,7 @@ const slider = ()=> {
           text = document.querySelectorAll('.text'),
           item = document.querySelectorAll('.item'),
           table = document.querySelectorAll('.table');
-
-          console.log(text[0]);
-  
-      
+   
          
 let count = 0;
 let idInterval = setInterval(function(){
