@@ -4,6 +4,7 @@ import slider from './modules/slider';
 import ourServices from './modules/ourServices';
 import help from './modules/help';
 import questions from './modules/questions';
+import chevronUp from './modules/chevronUp';
 
 
   modalCallback();
@@ -12,6 +13,7 @@ import questions from './modules/questions';
   ourServices();
   help();
   questions();
+  chevronUp();
   
 
   
