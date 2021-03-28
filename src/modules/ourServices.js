@@ -66,13 +66,13 @@
          this.prev.addEventListener('click', this.prevSlider.bind(this));
          this.next.addEventListener('click', this.nextSlider.bind(this));
        }
-       prevSlider(){
+       nextSlider(){
           if(this.options.position > 0){
          --this.options.position;
          this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`;
           }
        }
-       nextSlider(){
+       prevSlider(){
          if(this.options.position < this.slides.length - this.slidesToShow){
          ++this.options.position;
          this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`;
