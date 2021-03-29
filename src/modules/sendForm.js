@@ -14,9 +14,7 @@ const errorMessage = 'Что-то пошло не так...',
 
 
   const statusMessage = document.createElement('div');
-    statusMessage.style.cssText = 'font-size: 2rem';
-
-
+        statusMessage.style.cssText = 'font-size: 2rem';
 
   form.addEventListener('submit', (event) => {
        event.preventDefault();
