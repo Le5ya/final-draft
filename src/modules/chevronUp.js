@@ -1,7 +1,10 @@
 const chevronUp = function() {
+
   const up = document.querySelector('.up'),
    services  =  document.getElementById('services'), 
    topSlider = document.querySelector('.top-slider');
+
+    up.style.zIndex = -1;
 
      up.addEventListener('click', ()=> {
      up.style.zIndex = -1;
