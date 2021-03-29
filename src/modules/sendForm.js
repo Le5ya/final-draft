@@ -43,7 +43,7 @@ const errorMessage = 'Что-то пошло не так...',
    });
     request.send(JSON.stringify(body));
 
-    statusMessage = '';
+    
        form.reset();
      modalCallback.style.display = none;
 
