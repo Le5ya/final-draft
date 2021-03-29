@@ -2,7 +2,8 @@ const sendForm = function(){
 const errorMessage = 'Что-то пошло не так...',
          loadMessage = 'Загрузка...',
          successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
- const modalCallback = document.querySelector('.modal-callback');
+ const  modalOverlay = document.querySelector('.modal-overlay'),
+        modalCallback = document.querySelector('.modal-callback');
  const form = document.forms[0],
         formName = form.querySelectorAll('.form-control')[0],
         formPhone = form.querySelectorAll('.form-control')[1];
@@ -13,6 +14,15 @@ const errorMessage = 'Что-то пошло не так...',
 
 
   const statusMessage = document.createElement('div');
+  const hideMessage = () => {
+        let timeoutID = setTimeout(() => {
+            statusMessage.style.display = 'none';
+            modalCallback.style.display = 'none';
+            modalOverlay.style.display = 'none';
+          },2000);
+          // clearTimeout(timeoutID);
+        };
+
         statusMessage.style.cssText = 'font-size: 2rem';
 
   form.addEventListener('submit', (event) => {
@@ -27,12 +37,13 @@ const errorMessage = 'Что-то пошло не так...',
             }
             if(request.status === 200) {
               statusMessage.textContent = successMessage;
+              hideMessage();
             }else{
               statusMessage.textContent = errorMessage; 
+              hideMessage();
               
         }
       });
-      loadMessage = '';
        request.open('POST', './server.php');
        request.setRequestHeader('Content-Type', 'application/json');
        const formData = new FormData(form);
@@ -45,7 +56,7 @@ const errorMessage = 'Что-то пошло не так...',
 
     
        form.reset();
-     modalCallback.style.display = none;
+
 
 });
 
