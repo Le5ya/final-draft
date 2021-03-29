@@ -3,7 +3,6 @@ const errorMessage = 'Что-то пошло не так...',
          loadMessage = 'Загрузка...',
          successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
 // const modalCallback = document.querySelector('.modal-callback');
-
  const form = document.forms[0],
         formName = form.querySelectorAll('.form-control')[0],
         formPhone = form.querySelectorAll('.form-control')[1];
@@ -28,7 +27,7 @@ const errorMessage = 'Что-то пошло не так...',
             }
             if(request.status === 200) {
               statusMessage.textContent = successMessage;
-            }else {
+            }else{
               statusMessage.textContent = errorMessage; 
               
         }
@@ -39,9 +38,8 @@ const errorMessage = 'Что-то пошло не так...',
        let body = {};
 
    formData.forEach((val, key) =>{
-     body[val[0]] = val[1];
+      body[key] = val;
    });
-
     request.send(JSON.stringify(body));
        form.reset();
 
