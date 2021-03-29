@@ -16,7 +16,7 @@ const chevronUp = function() {
 
    window.addEventListener('scroll', function(){
     let coords = services.getBoundingClientRect();
-    if(coords.top < 0 && coords.top > -300){
+    if(coords.top < 0){
      up.style.zIndex = 300;
     }else{
       up.style.zIndex = -1;

@@ -5,6 +5,7 @@ import ourServices from './modules/ourServices';
 import help from './modules/help';
 import questions from './modules/questions';
 import chevronUp from './modules/chevronUp';
+import sendForm from './modules/sendForm';
 
 
   modalCallback();
@@ -14,6 +15,7 @@ import chevronUp from './modules/chevronUp';
   help();
   questions();
   chevronUp();
+  sendForm();
   
 
   
