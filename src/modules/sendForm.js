@@ -2,7 +2,7 @@ const sendForm = function(){
 const errorMessage = 'Что-то пошло не так...',
          loadMessage = 'Загрузка...',
          successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
-// const modalCallback = document.querySelector('.modal-callback');
+ const modalCallback = document.querySelector('.modal-callback');
  const form = document.forms[0],
         formName = form.querySelectorAll('.form-control')[0],
         formPhone = form.querySelectorAll('.form-control')[1];
@@ -32,6 +32,7 @@ const errorMessage = 'Что-то пошло не так...',
               
         }
       });
+      loadMessage = '';
        request.open('POST', './server.php');
        request.setRequestHeader('Content-Type', 'application/json');
        const formData = new FormData(form);
@@ -41,7 +42,10 @@ const errorMessage = 'Что-то пошло не так...',
       body[key] = val;
    });
     request.send(JSON.stringify(body));
+
+    statusMessage = '';
        form.reset();
+     modalCallback.style.display = none;
 
 });
 
